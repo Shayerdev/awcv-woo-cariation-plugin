@@ -1,6 +1,6 @@
 <?php
 
-namespace awcv\ajax;
+namespace awcv\Ajax;
 
 use awcv\Helpers;
 

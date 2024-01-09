@@ -2,7 +2,7 @@
 
 namespace awcv;
 
-use awcv\ajax;
+use awcv\Ajax;
 use awcv\Assets;
 use awcv\Customizer;
 use awcv\Localize;
@@ -24,8 +24,8 @@ class AprilWooCartVariation
 
     public static function initAjax()
     {
-        new ajax\AjaxVariableForm(self::$idCartMainScript);
-        new ajax\AjaxVariableUpdate(self::$idCartMainScript);
+        new Ajax\AjaxVariableForm(self::$idCartMainScript);
+        new Ajax\AjaxVariableUpdate(self::$idCartMainScript);
     }
 
     /**
