@@ -1,0 +1,3 @@
+<?php
+
+// Uninstall main scripts
