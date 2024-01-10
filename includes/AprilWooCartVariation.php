@@ -49,7 +49,6 @@ class AprilWooCartVariation
         # Init Cart Product Item Customizer
         Customizer\Cart::changeTitleItem();
         Customizer\Cart::selectedVariablesItems();
-        Customizer\Cart::addStaticLabelQuantity();
         Customizer\Cart::addPriceProductAfterName();
         Customizer\Cart::addButtonEditVariable();
         Customizer\Cart::removeQuantityColumn();

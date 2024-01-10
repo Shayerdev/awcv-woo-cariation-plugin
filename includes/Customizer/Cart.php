@@ -75,7 +75,10 @@ class Cart
     {
         add_action("woocommerce_after_cart_item_name", function ($cart_item, $cart_item_key) {
             try {
+                $label = self::addStaticLabelQuantity();
+
                 $attr = array(
+                    'quantity_label' => $label,
                     'cart_item' => $cart_item,
                     'cart_item_key' => $cart_item_key
                 );
@@ -96,13 +99,10 @@ class Cart
      * Customize cart: Add static label quantity before input  count product
      * @return void
      */
-    public static function addStaticLabelQuantity()
+    public static function addStaticLabelQuantity(): string
     {
-        $quantity_label = apply_filters(AWCV_SLUG . '_quantity_label', __('Quantity', 'awcv'));
+        return apply_filters(AWCV_SLUG . '_quantity_label', __('Quantity', 'awcv'));
 
-        add_action('awcv_quantity_label', function () use ($quantity_label) {
-            echo $quantity_label;
-        });
     }
 
     /**
@@ -119,7 +119,6 @@ class Cart
             );
         }, 10, 2);
     }
-
 
     /**
      * Customize cart: Remove quantity column from table products
