@@ -6,8 +6,8 @@
 add_action("awcv_quantity_label") # Add custom label
 ```
 <h2>Plugin filters</h2>
-```php
 
+```php
 add_filter("awcv_quantity_label", function($label){
     return $label;
 });
@@ -27,7 +27,6 @@ add_filter("awcv_button_edit_cart_variable", function($attr_btn){
         "label" => __("Edit", AWCV_SLUG)
     );
 });
-
 ```
 <h2>Development guide</h2>
 <h3>Composer guide</h3>
