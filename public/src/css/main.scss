@@ -1,0 +1,47 @@
+/* Style by ShayerDev: last update 09.01.2024 */
+
+@import "modules/colors";
+@import "modules/animations";
+@import "modules/buttons";
+
+/* Remove Table name column in cart */
+td.product-quantity,
+th.product-quantity {
+  display: none !important;
+}
+
+/* Default style variation row in cart */
+.form_update_product_variation{
+  .single_add_to_cart_button,
+  .reset_variations{
+    display: none;
+  }
+}
+.product-variables-selected{
+  display: flex;
+  flex-flow: wrap column;
+  gap: 5px;
+  margin:  15px 0;
+  .product-variable-selected{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    font: normal 400 15px/18px var(--base-font);
+    gap: 5px;
+    .product-variable__value{
+      font-weight: 600;
+    }
+  }
+}
+
+.cart_item {
+  &.process-upload-variable{
+    animation: product-cart-process 1.7s infinite;
+  }
+  &.process-update-variable{
+    display: none;
+  }
+}
+
