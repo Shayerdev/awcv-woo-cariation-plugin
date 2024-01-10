@@ -53,7 +53,7 @@
             const variationFormResponse = await variationFormRequest.json();
 
             if(!variationFormResponse.success){
-
+                console.error(variationUpdateResponse);
             }else{
 
                 // Hide row
@@ -111,7 +111,7 @@
             const variationUpdateResponse = await variationUpdateRequest.json();
 
             if(!variationUpdateResponse.success){
-
+                console.error(variationUpdateResponse);
             }else{
                 $('button[name="update_cart"]').attr('disabled', false);
                 $('button[name="update_cart"]').click()
@@ -133,7 +133,6 @@
             // Remove current product variation form
             currentProductRow.remove();
         })
-
     });
 })(jQuery);
 

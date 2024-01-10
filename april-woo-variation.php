@@ -12,7 +12,7 @@
  */
 
 if (! defined('ABSPATH')) {
-    exit; // Exit if accessed directly
+    exit;
 }
 
 require_once 'vendor/autoload.php';
@@ -42,6 +42,7 @@ if (!is_plugin_active('woocommerce/woocommerce.php')) {
     exit;
 }
 
+# Connect main functionality for custom cart variable product
 AprilWooCartVariation::initAssets();
 AprilWooCartVariation::initLocalize();
 AprilWooCartVariation::initAjax();

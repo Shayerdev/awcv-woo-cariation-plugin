@@ -7,6 +7,10 @@ use awcv\Helpers;
 class CartVariationLocalize extends Helpers\CreateLocalization
 {
     protected $nameScript;
+
+    /**
+     * @param $relationScript
+     */
     public function __construct($relationScript)
     {
         $this->nameScript = $relationScript;
@@ -14,6 +18,9 @@ class CartVariationLocalize extends Helpers\CreateLocalization
         parent::__construct($relationScript, $this->varName, $this->options());
     }
 
+    /**
+     * @return array
+     */
     public function options(): array
     {
         return array(

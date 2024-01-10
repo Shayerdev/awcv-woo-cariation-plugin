@@ -6,6 +6,11 @@ class CreateLocalization
 {
     public $relationScript, $varName, $data;
 
+    /**
+     * @param $relationScript
+     * @param $varName
+     * @param $data
+     */
     public function __construct($relationScript, $varName, $data)
     {
 
@@ -17,6 +22,9 @@ class CreateLocalization
         add_action('init', array($this, "registrationLocalize"), 15);
     }
 
+    /**
+     * @return void
+     */
     public function registrationLocalize()
     {
         $data = array_merge($this->data, array(

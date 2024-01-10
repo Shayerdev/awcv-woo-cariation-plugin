@@ -5,6 +5,11 @@
 class CreateNotice
 {
     protected $msg, $type;
+
+    /**
+     * @param string $msg
+     * @param string $type
+     */
     public function __construct(string $msg, string $type = "error")
     {
         $this->msg = $msg;
@@ -12,11 +17,17 @@ class CreateNotice
         $this->displayNotice();
     }
 
+    /**
+     * @return void
+     */
     public function displayNotice()
     {
         add_action('admin_notices', [$this, "connectTemplate"]);
     }
 
+    /**
+     * @return void
+     */
     public function connectTemplate()
     {
         try {

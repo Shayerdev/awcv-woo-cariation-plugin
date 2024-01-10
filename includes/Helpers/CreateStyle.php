@@ -5,6 +5,11 @@ namespace awcv\Helpers;
 class CreateStyle
 {
     protected $options, $forAdmin;
+
+    /**
+     * @param array $options
+     * @param bool $forAdmin
+     */
     public function __construct(
         array $options,
         bool $forAdmin = false
@@ -16,6 +21,9 @@ class CreateStyle
         $this->connect();
     }
 
+    /**
+     * @return void
+     */
     public function connect()
     {
         if (is_admin() && !$this->forAdmin) {
@@ -27,6 +35,9 @@ class CreateStyle
             : add_action('admin_enqueue_scripts', array($this, 'enqueue'));
     }
 
+    /**
+     * @return void
+     */
     public function enqueue()
     {
         wp_enqueue_style(

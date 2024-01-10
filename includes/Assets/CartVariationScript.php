@@ -7,6 +7,10 @@ use awcv\Helpers;
 class CartVariationScript extends Helpers\CreateScript
 {
     protected $nameScript;
+
+    /**
+     * @param $nameScript
+     */
     public function __construct($nameScript)
     {
         $this->nameScript = $nameScript;
@@ -14,6 +18,9 @@ class CartVariationScript extends Helpers\CreateScript
         parent::__construct($this->options(), $this->forAdmin);
     }
 
+    /**
+     * @return array
+     */
     public function options(): array
     {
         return array(

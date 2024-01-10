@@ -6,6 +6,11 @@ class CreateAjax
 {
     protected $prefix, $action, $callback, $front;
 
+    /**
+     * @param string $action
+     * @param $callback
+     * @param bool $front
+     */
     public function __construct(string $action, $callback, bool $front = true)
     {
         $this->prefix = "wp_ajax_";
@@ -17,6 +22,9 @@ class CreateAjax
         $this->registration();
     }
 
+    /**
+     * @return void
+     */
     public function registration()
     {
         # Add ajax for Register user

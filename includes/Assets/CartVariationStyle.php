@@ -7,12 +7,16 @@ use awcv\Helpers;
 class CartVariationStyle extends Helpers\CreateStyle
 {
     protected $nameScript;
+
     public function __construct()
     {
         $this->nameScript = "awcv_variation_cart_style";
         parent::__construct($this->options());
     }
 
+    /**
+     * @return array
+     */
     public function options(): array
     {
         return array(

@@ -6,6 +6,11 @@ use awcv\Helpers;
 
 class Cart
 {
+    /**
+     * Customize cart: Add edit after name product in cart item product
+     *
+     * @return void
+     */
     public static function addButtonEditVariable()
     {
         add_action("woocommerce_after_cart_item_name", function ($cart_item, $cart_item_key) {
@@ -33,6 +38,11 @@ class Cart
         }, 10, 2);
     }
 
+    /**
+     * Customize cart: Remove attributes from title in product cart row
+     *
+     * @return void
+     */
     public static function changeTitleItem()
     {
         add_filter("woocommerce_cart_item_name", function (
@@ -56,6 +66,11 @@ class Cart
         }, 10, 3);
     }
 
+    /**
+     * Customize cart: Show selected variable product after title product
+     *
+     * @return void
+     */
     public static function selectedVariablesItems()
     {
         add_action("woocommerce_after_cart_item_name", function ($cart_item, $cart_item_key) {
@@ -77,6 +92,10 @@ class Cart
         }, 10, 2);
     }
 
+    /**
+     * Customize cart: Add static label quantity before input  count product
+     * @return void
+     */
     public static function addStaticLabelQuantity()
     {
         $quantity_label = apply_filters(AWCV_SLUG . '_quantity_label', __('Quantity', 'awcv'));
@@ -86,6 +105,10 @@ class Cart
         });
     }
 
+    /**
+     * Customize cart: Add Price after name product
+     * @return void
+     */
     public static function addPriceProductAfterName()
     {
         add_action("woocommerce_after_cart_item_name", function ($cart_item, $cart_item_key) {
@@ -98,6 +121,10 @@ class Cart
     }
 
 
+    /**
+     * Customize cart: Remove quantity column from table products
+     * @return void
+     */
     public static function removeQuantityColumn()
     {
         add_filter('woocommerce_cart_item_quantity', '__return_false');

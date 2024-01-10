@@ -7,12 +7,19 @@ use awcv\Helpers;
 class AjaxVariableUpdate extends Helpers\CreateAjax
 {
     protected $nonce_query;
+
+    /**
+     * @param $nonce_query
+     */
     public function __construct($nonce_query)
     {
         $this->nonce_query = $nonce_query;
         parent::__construct("ajax_variation_form_update", [$this, "callback"]);
     }
 
+    /**
+     * @return void
+     */
     public function callback()
     {
 

@@ -5,6 +5,11 @@
 class CreateScript
 {
     protected $options, $forAdmin;
+
+    /**
+     * @param array $options
+     * @param bool $forAdmin
+     */
     public function __construct(
         array $options,
         bool $forAdmin = false
@@ -16,6 +21,9 @@ class CreateScript
         $this->connect();
     }
 
+    /**
+     * @return void
+     */
     public function connect()
     {
         if (is_admin() && !$this->forAdmin) {
@@ -26,6 +34,10 @@ class CreateScript
             ? $this->enqueue()
             : add_action('admin_enqueue_scripts', array($this, 'enqueue'));
     }
+
+    /**
+     * @return void
+     */
 
     public function enqueue()
     {

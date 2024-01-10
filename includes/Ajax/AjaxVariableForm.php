@@ -7,12 +7,19 @@ use awcv\Helpers;
 class AjaxVariableForm extends Helpers\CreateAjax
 {
     protected $nonce_query;
+
+    /**
+     * @param $nonce_query
+     */
     public function __construct($nonce_query)
     {
         $this->nonce_query = $nonce_query;
         parent::__construct("ajax_variation_form", [$this, "callback"]);
     }
 
+    /**
+     * @return void
+     */
     public function callback()
     {
         $data = json_decode(file_get_contents("php://input"));
