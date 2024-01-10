@@ -31,12 +31,14 @@ add_filter("awcv_button_edit_cart_variable", function($attr_btn){
 ```
 <h2>Development guide</h2>
 <h3>Composer guide</h3>
+
 ```bash
 composer install # Install composer dependency
 composer update  # Update dependency
 composer build   # build app
 ```
 <h3>CodeSniffer php</h3>
+
 ```bash
 vendor/bin/phpcs --standard=PSR12 .  # Test code
 vendor/bin/phpcbf --standard=PSR12 . # Autofix code
@@ -47,7 +49,10 @@ npm install # Install node dependency
 npm update  # Update dependency
 ```
 <h3>Webpack guide</h3>
+
 ```bash
-npm run watch # Development mode
-npm run build # Build app
+npm run watch
+```
+```bash
+npm run build 
 ```
